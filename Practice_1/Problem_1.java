@@ -4,13 +4,9 @@ void main() {
     IO.print("Enter name: ");
     name = in.next();
     IO.print('+');
-    for (int i = 0; i < name.length(); ++i) {
-        IO.print('-');
-    }
+    IO.print("-".repeat(name.length()));
     IO.print("+\n|" + name + "|\n");
     IO.print('+');
-    for (int i = 0; i < name.length(); ++i) {
-        IO.print('-');
-    }
+    IO.print("-".repeat(name.length()));
     IO.print('+');
 }
