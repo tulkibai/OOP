@@ -1,11 +1,9 @@
 void main() {
     Scanner in = new Scanner(System.in);
-    double area = 12;
-    double perimeter = 12;
-    double diagonal = 12;
-    double a = 12;
-    IO.print("Enter length of the side of a square: ");
-    a = in.nextDouble();
+    int area, perimeter, a;
+    double diagonal;
+    IO.print("Enter length of side of square: ");
+    a = in.nextInt();
     area = a * a;
     perimeter = 4 * a;
     diagonal = a * Math.sqrt(2);

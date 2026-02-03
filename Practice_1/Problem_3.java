@@ -1,7 +1,8 @@
 void main() {
     Scanner in = new Scanner(System.in);
     IO.print("Enter the numeric grade: ");
-    int grade = in.nextInt();
+    double grade = in.nextDouble();
+    grade = (int)Math.round(grade);
     if (grade >= 95) IO.print("Grade is A");
     else if (grade >= 90) IO.print("Grade is A-");
     else if (grade >= 85) IO.print("Grade is B+");
