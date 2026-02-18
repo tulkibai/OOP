@@ -1,3 +1,5 @@
+package practice_2;
+
 public class Student
 {
     private String name;
@@ -48,7 +50,7 @@ public class Student
 
     public String toString()
     {
-        return "Student {" +
+        return "practice_2.Student {" +
                 "  \nName: " + name +
                 "  \nID: " + id +
                 "  \nYear: " + year +

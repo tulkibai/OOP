@@ -1,3 +1,5 @@
+package practice_2;
+
 public class Time
 {
     private int hour;
@@ -73,7 +75,8 @@ public class Time
             minute += second / 60;
             second %= 60;
         }
-        else if (second < 0) {
+        else if (second < 0)
+        {
             second = 0;
         }
         if (minute >= 60)
@@ -81,14 +84,16 @@ public class Time
             hour += minute / 60;
             minute %= 60;
         }
-        else if (minute < 0) {
+        else if (minute < 0)
+        {
             minute = 0;
         }
         if (hour >= 24)
         {
             hour %= 24;
         }
-        else if (hour < 0) {
+        else if (hour < 0)
+        {
             hour = 0;
         }
     }
