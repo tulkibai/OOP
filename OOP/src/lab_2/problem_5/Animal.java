@@ -1,14 +1,35 @@
 package lab_2.problem_5;
 
 import java.util.Objects;
+import lab_3.*;
 
-public abstract class Animal {
+public abstract class Animal implements Comparable<Animal>, Cloneable, ISoundable, IMoveable {
     private String name;
     private int age;
+
+    @Override
+    public void Sound() {
+        System.out.println("Animal " + name + " make some sound");
+    }
+
+    @Override
+    public void Move() {
+        System.out.println("Animal " + name + " walks");
+    }
 
     public Animal (String name_, int age_) {
         name = name_;
         age = age_;
+    }
+
+    @Override
+    public int compareTo(Animal o) {
+        return Integer.compare(this.age, o.age);
+    }
+
+    @Override
+    public Animal clone() throws CloneNotSupportedException {
+        return (Animal) super.clone();
     }
 
     public String getName () {
@@ -43,6 +64,4 @@ public abstract class Animal {
     public int hashCode() {
         return Objects.hash(getClass(), name, age);
     }
-
-
 }

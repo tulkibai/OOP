@@ -1,17 +1,26 @@
 package lab_2.problem_5;
 
+import lab_3.*;
 import java.util.Objects;
 
-public abstract class Person {
+public abstract class Person implements Comparable<Person>, Cloneable, IMoveable, ISoundable {
     private String name;
     private int age;
     protected Animal pet;
 
-    // если этот человек временно присматривает за чужим питомцем
     protected Person temporaryPetOwner;
 
-    // если этот человек отдал своего питомца кому-то на время
     protected Person temporaryCaretaker;
+
+    @Override
+    public void Sound() {
+        System.out.println("Person says: my name is " + name);
+    }
+
+    @Override
+    public void Move() {
+        System.out.println(name + " walks");
+    }
 
     public Person(String name, int age) {
         this.name = name;
@@ -19,6 +28,16 @@ public abstract class Person {
         this.pet = null;
         this.temporaryPetOwner = null;
         this.temporaryCaretaker = null;
+    }
+
+    @Override
+    public int compareTo(Person o) {
+        return Integer.compare(this.age, o.age);
+    }
+
+    @Override
+    public Person clone() throws CloneNotSupportedException {
+        return (Person) super.clone();
     }
 
     public String getName() {
